@@ -59,4 +59,18 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
     })
 })
 
+router.delete('/api/workouts/:id', ({ body }, res) => {
+  Workout.findByIdAndDelete(
+    body.id
+  )
+    .then(() => {
+      res.json(true)
+    })
+    .catch((err) => {
+      res.status(400).json(err)
+    })
+})
+
+
+
 module.exports = router
