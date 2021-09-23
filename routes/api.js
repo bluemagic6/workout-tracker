@@ -59,7 +59,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
     })
 })
 
-router.delete('/api/workouts/:id', ({ body }, res) => {
+router.delete('/api/workouts', ({ body }, res) => {
   Workout.findByIdAndDelete(
     body.id
   )
