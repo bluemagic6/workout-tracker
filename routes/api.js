@@ -11,8 +11,14 @@ router.post("/api/workout", ({ body }, res) => {
     });
 });
 
-router.post("/api/workout/range", ({ body }, res) => {
-  Workout.insertMany(body)
+router.get("/api/workout/range", (req, res) => {
+  Workout.aggregate([{
+    $addFields: {
+      totalDuration: {$sum:'$exercises.duration'}
+    }
+  }])
+    .sort({_id: -1})
+    .limit(7)
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
