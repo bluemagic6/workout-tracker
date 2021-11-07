@@ -7,7 +7,7 @@ router.post('/api/workouts', (req, res) => {
       res.json(dbWorkout)
     })
     .catch((err) => {
-      res.status(400).json(err)
+      res.json(err)
     })
 })
 
@@ -25,7 +25,7 @@ router.get('/api/workouts/range', (req, res) => {
       res.json(dbWorkout)
     })
     .catch((err) => {
-      res.status(400).json(err)
+      res.json(err)
     })
 })
 
@@ -41,7 +41,7 @@ router.get('/api/workouts', (req, res) => {
       res.json(dbWorkout)
     })
     .catch((err) => {
-      res.status(400).json(err)
+      res.json(err)
     })
 })
 
@@ -55,7 +55,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
       res.json(dbWorkout)
     })
     .catch((err) => {
-      res.status(400).json(err)
+      res.json(err)
     })
 })
 
@@ -67,7 +67,7 @@ router.delete('/api/workouts', ({ body }, res) => {
       res.json(true)
     })
     .catch((err) => {
-      res.status(400).json(err)
+      res.json(err)
     })
 })
 
